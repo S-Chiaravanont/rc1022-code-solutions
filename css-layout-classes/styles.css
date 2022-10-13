@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.full-column {
+  flex-basis: 100%;
+}
+
+.one-third-column {
+  flex-basis: calc(100%/3);
+}
+
+.one-fourth-column {
+  flex-basis: 25%;
+}
+
+.two-third-column {
+  flex-basis: calc(100%/1.5);
+}
