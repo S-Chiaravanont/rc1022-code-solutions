@@ -17,18 +17,18 @@ img {
   display: flex;
 }
 
-.full-column {
+.column-full {
   flex-basis: 100%;
 }
 
-.one-third-column {
+.column-one-third {
   flex-basis: calc(100%/3);
 }
 
-.one-fourth-column {
+.column-one-fourth {
   flex-basis: 25%;
 }
 
-.two-third-column {
+.column-two-third {
   flex-basis: calc(100%/1.5);
 }
