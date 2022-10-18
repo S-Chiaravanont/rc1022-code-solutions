@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(247 248 250);
+}
+
+div.column-quarter > img {
+  width: 100%;
+}
+
+div.logo-container > img {
+  width: 20%;
+}
+
+p {
+  font-size: 0.5rem;
+}
+
+div.column-full > h4 {
+  margin-bottom: 10px;
+}
+
+div.column-quarter > h6 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.barlow-font {
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-quarter {
+  flex-basis: 25%;
+}
+
+.text-align-center {
+  text-align: center;
+}
