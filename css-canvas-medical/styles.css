@@ -46,8 +46,19 @@ div.info-list > ul > li {
   padding-bottom: 1rem;
 }
 
+p > a {
+  text-decoration: none;
+}
+
 a:hover {
   color: rgb(40 69 100);
+}
+
+p > i {
+  font-family:
+    "Tiempos Headline",
+    sans-serif;
+  font-size: 0.67rem;
 }
 
 .avenir-font {
@@ -146,6 +157,13 @@ a:hover {
 .h2-hero-img {
   margin-bottom: 13px;
   font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.h2-hero-img-product {
+  margin-bottom: 13px;
+  font-weight: lighter;
+  font-size: 1.31rem;
 }
 
 .hero-img {
@@ -164,6 +182,13 @@ a:hover {
 .hero-parag {
   font-size: 0.65rem;
   line-height: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero-parag-product {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  margin-bottom: 20px;
 }
 
 .bottom-margin {
@@ -171,7 +196,7 @@ a:hover {
 }
 
 .hero-img-container-index {
-  width: 722.5px;
+  width: 100%;
   height: 360px;
   display: block;
   justify-content: center;
@@ -224,8 +249,22 @@ a:hover {
   background-repeat: no-repeat;
 }
 
+.product-performance-img {
+  width: 90%;
+  height: 360px;
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  background-image: url("images/product/product-image-3.png");
+  background-clip: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .logo-white {
-  width: 35%;
+  width: 29%;
 }
 
 .logo-blue {
@@ -257,13 +296,13 @@ a:hover {
 }
 
 .address {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   line-height: 1.2rem;
   margin-top: 25px;
 }
 
 .info-list {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 .h3-clinician {
@@ -277,20 +316,26 @@ a:hover {
   margin-bottom: 35px;
 }
 
-.img-p {
-  margin-bottom: 20px;
-}
-
 .padding-left-40px {
   padding-left: 40px;
 }
 
+.padding-left-20px {
+  padding-left: 20px;
+}
+
+.padding-left-60px {
+  padding-left: 60px;
+}
+
 .h3-learn {
   margin-bottom: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
 }
 
 .p-learn {
-  font-size: 0.62rem;
+  font-size: 0.7rem;
 }
 
 .div-canvas {
