@@ -263,6 +263,19 @@ p > i {
   background-repeat: no-repeat;
 }
 
+.hero-img-container-implementation {
+  width: 85%;
+  height: 360px;
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  background-image: url("images/implementation/implementation-header.jpg");
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+
 .logo-white {
   width: 29%;
 }
