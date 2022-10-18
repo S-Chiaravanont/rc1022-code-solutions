@@ -196,7 +196,7 @@ p > i {
 }
 
 .hero-img-container-index {
-  width: 100%;
+  width: 85%;
   height: 360px;
   display: block;
   justify-content: center;
@@ -209,7 +209,7 @@ p > i {
 }
 
 .hero-img-container-product {
-  width: 722.5px;
+  width: 85%;
   height: 360px;
   display: block;
   justify-content: center;
