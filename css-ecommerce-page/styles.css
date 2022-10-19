@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-fifth {
+  flex-basis: 20%;
+  padding: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-container-dress1 {
+  width: 100%;
+  height: 230px;
+  background-image: url("images/dress1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-container-dress2 {
+  width: 100%;
+  height: 230px;
+  background-image: url("images/dress2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-container-ysl-bag {
+  width: 100%;
+  height: 230px;
+  background-image: url("images/ysl-bag.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-container-key {
+  width: 100%;
+  height: 230px;
+  background-image: url("images/key.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-container-lv-bag {
+  width: 100%;
+  height: 230px;
+  background-image: url("images/lv-bag.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.item-text {
+  font-size: 0.55rem;
+}
+
+.gray-text {
+  color: rgb(216 216 216);
+}
+
+.bg-240 {
+  background-color: rgb(255 242 231);
+  border-radius: 2px;
+  padding: 1px;
+}
