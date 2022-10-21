@@ -15,8 +15,8 @@ DID NOT WORK - CANNOT ITERATE BACKWARD :(
 - .unshift each letter into the new array
 - assign new array.join('') onto new string
 - return new string
-*/
 
+------- revised -------
 function reverseWord(word) {
   var reversedWord = '';
   var wordArray = [];
@@ -24,5 +24,18 @@ function reverseWord(word) {
     wordArray.unshift(word[i]);
   }
   reversedWord = wordArray.join('');
+  return reversedWord;
+}
+----------------------
+
+- change approach to concat the letter to reversedWord in the before manner and assign that to the reversedWord variable
+- remove the need to use array and .join() method
+*/
+
+function reverseWord(word) {
+  var reversedWord = '';
+  for (var i = 0; i < word.length; i++) {
+    reversedWord = word[i] + reversedWord;
+  }
   return reversedWord;
 }
