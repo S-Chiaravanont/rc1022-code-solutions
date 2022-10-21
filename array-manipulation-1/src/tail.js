@@ -6,12 +6,15 @@
 - loop through each item starting index 1
 - add those item onto new array
 - after loop -> return new array
+
+---------Revise----------
+remove condition to check if input array is empty
+- ([] === []) will result in false, cannot compare array like that because array is pointer
+- should be check if input array.length is === 0 instead.
 */
 
 function tail(array) {
-  if (array === []) {
-    return [];
-  }
+
   var tailArray = [];
   for (var i = 1; i < array.length; i++) {
     tailArray.push(array[i]);

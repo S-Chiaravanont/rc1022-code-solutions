@@ -18,12 +18,14 @@ INCORRECT ASSUMPTION, there's no 2nd parameter
 - check if item at each index is *truthy*  -> if(item)
 - then append this item onto new array
 - after loop, return new array
+
+---------Revise----------
+remove condition to check if input array is empty
+- ([] === []) will result in false, cannot compare array like that because array is pointer
+- should be check if input array.length is === 0 instead.
 */
 
 function compact(array) {
-  if (array === []) {
-    return [];
-  }
   var compactArray = [];
   for (var i = 0; i < array.length; i++) {
     if (array[i]) {
