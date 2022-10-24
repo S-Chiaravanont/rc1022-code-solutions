@@ -8,8 +8,8 @@
 - loop through each key in key array
 - if key isn't included in keys array -> add this property to new object
 - return new object
-*/
 
+old code block
 function omit(source, keys) {
   var sourceKey = [];
   var obj = {};
@@ -19,6 +19,24 @@ function omit(source, keys) {
   for (var i = 0; i < sourceKey.length; i++) {
     if (!Array.prototype.includes.call(keys, sourceKey[i])) {
       obj[sourceKey[i]] = source[sourceKey[i]];
+    }
+  }
+  return obj;
+}
+
+---Revision-----
+- remove sourceKey array
+- use for...in loop to go through each key in source
+- determine if key is included in keys array
+- if not push key and value to obj
+
+*/
+
+function omit(source, keys) {
+  var obj = {};
+  for (var key in source) {
+    if (!Array.prototype.includes.call(keys, key)) {
+      obj[key] = source[key];
     }
   }
   return obj;
