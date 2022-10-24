@@ -11,6 +11,13 @@
 - else -> concat each letter to the new string
 --------option 2---------
 - concat lowerCaseWord[0].toUpperCase to the new empty string
+- .....
+---------revise----------
+- remove for loop with slice(start,end)
+- old code block insert at line 32 (to replace line 32)
+  // for (var i = 1; i < lowerCaseWord.length; i++) {
+  //   capitalizedWord += lowerCaseWord[i];
+  // }
 
 */
 
@@ -22,8 +29,6 @@ function capitalizeWord(word) {
   }
   var capitalizedWord = '';
   capitalizedWord += lowerCaseWord[0].toUpperCase();
-  for (var i = 1; i < lowerCaseWord.length; i++) {
-    capitalizedWord += lowerCaseWord[i];
-  }
+  capitalizedWord += lowerCaseWord.slice(1);
   return capitalizedWord;
 }
