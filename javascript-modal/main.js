@@ -8,20 +8,13 @@ $noButton.addEventListener('click', modalVisibilityOff);
 
 var $overlayBG = document.querySelector('#overlay');
 
-var visibilitOff = true;
-
 function modalVisibilityOn(event) {
-  if (visibilitOff) {
-    $modelElement.className += ' position-appear';
-    $overlayBG.className = 'overlay-bg';
-    visibilitOff = false;
-  }
+  // console.log('modal button clicked');
+  $modelElement.className += ' position-appear';
+  $overlayBG.className = 'overlay-bg';
 }
 
 function modalVisibilityOff(event) {
-  if (!visibilitOff) {
-    $modelElement.className = 'modal';
-    $overlayBG.className = '';
-    visibilitOff = true;
-  }
+  $modelElement.className = 'modal';
+  $overlayBG.className = '';
 }
