@@ -40,9 +40,9 @@ button:active {
 }
 
 div.pokeball-wrapper:first-child > img {
-  rotate: 30deg;
+  rotate: -30deg;
 }
 
 div.pokeball-wrapper:last-child > img {
-  rotate: -30deg;
+  rotate: 30deg;
 }
