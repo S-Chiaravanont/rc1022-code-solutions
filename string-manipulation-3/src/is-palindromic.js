@@ -11,11 +11,13 @@
 - increment counterForward by 1 & reduce counterBackward by 1 after if statement but within for loop
 - if it doesn't match -> return false
 - after the loop -> return true (this condition is met only if all the letters are matched)
+
+---- minor revision ----
+- remove creating new array and combine methods into 1 line of code .split(' ').join('')
 */
 
 function isPalindromic(string) {
-  var splitArray = string.split(' ');
-  var wordsJoin = splitArray.join('');
+  var wordsJoin = string.split(' ').join('');
   var counterForward = 0;
   var counterBackward = wordsJoin.length - 1;
   var halfWay = Math.floor(wordsJoin.length / 2);
