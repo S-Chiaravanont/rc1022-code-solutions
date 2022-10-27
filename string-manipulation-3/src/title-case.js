@@ -13,35 +13,45 @@
 */
 
 var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
-var javaScript = 'JavaScript';
-var lowerCaseJavaScript = 'javascript';
-var acronymAPI = 'API';
-var lowerCaseAPI = 'api';
-var colonLetter = ':';
 
 function titleCase(title) {
   var titleArray = title.toLowerCase().split(' ');
   // console.log(titleArray);
 
   var isMinorWordIndexes = [];
-  var isWordWithColonIndex = [];
+  var isWordWithColonIndexes = [];
+  var isJavaScriptColon = [];
+  var isHyphenWordIndexes = [];
   for (var i = 0; i < titleArray.length; i++) {
     // check for minor word and append index at which minor is found
     if (Array.prototype.includes.call(minorWords, titleArray[i])) {
       isMinorWordIndexes.push(i);
     }
-    // check for colon (:) and append index at which colon is found + 1 to mark the adjacent word required capitalized
-    if (titleArray[i].includes(colonLetter)) {
-      isWordWithColonIndex.push(i + 1);
+    // check for colon (:) and append index at which colon is found + 1 to mark the next adjacent word required capitalized
+    if (titleArray[i].includes(':')) {
+      isWordWithColonIndexes.push(i + 1);
       // console.log(titleArray[i]);
+    }
+    // check if word is javascript: and append index at which javascript is found
+    if (titleArray[i] === 'javascript:') {
+      isJavaScriptColon.push(i);
+    }
+    // check if word has hyphen (-) and append index at which hypen-word is found
+    if (titleArray[i].includes('-')) {
+      isHyphenWordIndexes.push(i);
     }
   }
   // console.log('minor word array:', isMinorWordIndexes);
   // console.log('colon index array:', isWordWithColonIndex);
+  // console.log('hyphen index array:', isHyphenWordIndexes);
 
-  // first word ALWAYS get capitalized
+  // first word ALWAYS get capitalized unless it's JavaScript:
   var titledSentence = '';
-  titledSentence += titleArray[0][0].toUpperCase() + titleArray[0].slice(1);
+  if (!Array.prototype.includes.call(isJavaScriptColon, 0)) {
+    titledSentence += titleArray[0][0].toUpperCase() + titleArray[0].slice(1);
+  } else {
+    titledSentence += 'JavaScript:';
+  }
   // console.log(titledSentence);
 
   // Loop through the rest of the words in the array to concat to the final string
@@ -54,16 +64,20 @@ function titleCase(title) {
       yesCapitalize = false;
     }
     // checking if this index need capitalize because previous index has colon
-    if (Array.prototype.includes.call(isWordWithColonIndex, j)) {
+    if (Array.prototype.includes.call(isWordWithColonIndexes, j)) {
       yesCapitalize = true;
     }
-    // checking if current word is javascript
-    if (titleArray[j] === lowerCaseJavaScript) {
-      titledSentence += ' ' + javaScript;
-    } else if (titleArray[j] === lowerCaseAPI) { // checking if current word is API
-      titledSentence += ' ' + acronymAPI;
-    } else if (yesCapitalize) {
-      // condition checking if the current word need to be capitalize depending on boolean yesCapitalize
+    if (titleArray[j] === 'javascript') { // checking if current word is javascript
+      titledSentence += ' JavaScript';
+    } else if (titleArray[j] === 'api') { // checking if current word is API
+      titledSentence += ' API';
+    } else if (titleArray[j] === 'javascript:') { // check if current word is javascript:
+      titledSentence += ' JavaScript:';
+    } else if (Array.prototype.includes.call(isHyphenWordIndexes, j)) { // check if current index is included in hyphen index array
+      var beforeHyphenWord = titleArray[j].split('-')[0];
+      var afterHyphenWord = titleArray[j].split('-')[1];
+      titledSentence += ' ' + beforeHyphenWord[0].toUpperCase() + beforeHyphenWord.slice(1) + '-' + afterHyphenWord[0].toUpperCase() + afterHyphenWord.slice(1);
+    } else if (yesCapitalize) { // condition checking if the current word need to be capitalize depending on boolean yesCapitalize
       // if need to capitalize
       titledSentence += ' ' + titleArray[j][0].toUpperCase() + titleArray[j].slice(1);
     } else {
