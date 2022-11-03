@@ -16,7 +16,6 @@ var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by',
 
 function titleCase(title) {
   var titleArray = title.toLowerCase().split(' ');
-  // console.log(titleArray);
 
   var isMinorWordIndexes = [];
   var isWordWithColonIndexes = [];
@@ -30,7 +29,6 @@ function titleCase(title) {
     // check for colon (:) and append index at which colon is found + 1 to mark the next adjacent word required capitalized
     if (titleArray[i].includes(':')) {
       isWordWithColonIndexes.push(i + 1);
-      // console.log(titleArray[i]);
     }
     // check if word is javascript: and append index at which javascript is found
     if (titleArray[i] === 'javascript:') {
@@ -41,9 +39,6 @@ function titleCase(title) {
       isHyphenWordIndexes.push(i);
     }
   }
-  // console.log('minor word array:', isMinorWordIndexes);
-  // console.log('colon index array:', isWordWithColonIndex);
-  // console.log('hyphen index array:', isHyphenWordIndexes);
 
   // first word ALWAYS get capitalized unless it's JavaScript:
   var titledSentence = '';
@@ -52,7 +47,6 @@ function titleCase(title) {
   } else {
     titledSentence += 'JavaScript:';
   }
-  // console.log(titledSentence);
 
   // Loop through the rest of the words in the array to concat to the final string
   // starting at index 1 because index 0 is taken care of in step above
