@@ -30,12 +30,15 @@ function omit(source, keys) {
 - determine if key is included in keys array
 - if not push key and value to obj
 
+---revision 2---
+- change Array.prototype.includes.call() with array.includes()
+
 */
 
 function omit(source, keys) {
   var obj = {};
   for (var key in source) {
-    if (!Array.prototype.includes.call(keys, key)) {
+    if (!keys.includes(key)) {
       obj[key] = source[key];
     }
   }
