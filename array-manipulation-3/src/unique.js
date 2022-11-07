@@ -17,7 +17,7 @@ function unique(array) {
   var uniqueArray = [];
   uniqueArray.push(array[0]);
   for (var i = 1; i < array.length; i++) {
-    if (!Array.prototype.includes.call(uniqueArray, array[i])) {
+    if (!uniqueArray.includes(array[i])) {
       uniqueArray.push(array[i]);
     }
   }

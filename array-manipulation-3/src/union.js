@@ -12,7 +12,7 @@
 function union(first, second) {
   var unionArray = [...first];
   for (var i = 0; i < second.length; i++) {
-    if (!Array.prototype.includes.call(unionArray, second[i])) {
+    if (!unionArray.includes(second[i])) {
       unionArray.push(second[i]);
     }
   }

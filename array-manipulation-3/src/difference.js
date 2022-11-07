@@ -14,12 +14,12 @@
 function difference(first, second) {
   var differenceArray = [];
   for (var i = 0; i < first.length; i++) {
-    if (!Array.prototype.includes.call(second, first[i])) {
+    if (!second.includes(first[i])) {
       differenceArray.push(first[i]);
     }
   }
   for (var j = 0; j < second.length; j++) {
-    if (!Array.prototype.includes.call(first, second[j]) && !Array.prototype.includes.call(differenceArray, second[j])) {
+    if (!first.includes(second[j]) && !differenceArray.includes(second[j])) {
       differenceArray.push(second[j]);
     }
   }
