@@ -23,7 +23,7 @@ function titleCase(title) {
   var isHyphenWordIndexes = [];
   for (var i = 0; i < titleArray.length; i++) {
     // check for minor word and append index at which minor is found
-    if (Array.prototype.includes.call(minorWords, titleArray[i])) {
+    if (minorWords.includes(titleArray[i])) {
       isMinorWordIndexes.push(i);
     }
     // check for colon (:) and append index at which colon is found + 1 to mark the next adjacent word required capitalized
@@ -42,7 +42,7 @@ function titleCase(title) {
 
   // first word ALWAYS get capitalized unless it's JavaScript:
   var titledSentence = '';
-  if (!Array.prototype.includes.call(isJavaScriptColon, 0)) {
+  if (!isJavaScriptColon.includes(0)) {
     titledSentence += titleArray[0][0].toUpperCase() + titleArray[0].slice(1);
   } else {
     titledSentence += 'JavaScript:';
@@ -54,11 +54,11 @@ function titleCase(title) {
     // need boolean to keep track whether to capitalize first letter of the current word in iteration
     var yesCapitalize = true;
     // checking if this index is in isMinorWordIndex
-    if (Array.prototype.includes.call(isMinorWordIndexes, j)) {
+    if (isMinorWordIndexes.includes(j)) {
       yesCapitalize = false;
     }
     // checking if this index need capitalize because previous index has colon
-    if (Array.prototype.includes.call(isWordWithColonIndexes, j)) {
+    if (isWordWithColonIndexes.includes(j)) {
       yesCapitalize = true;
     }
     if (titleArray[j] === 'javascript') { // checking if current word is javascript
@@ -67,7 +67,7 @@ function titleCase(title) {
       titledSentence += ' API';
     } else if (titleArray[j] === 'javascript:') { // check if current word is javascript:
       titledSentence += ' JavaScript:';
-    } else if (Array.prototype.includes.call(isHyphenWordIndexes, j)) { // check if current index is included in hyphen index array
+    } else if (isHyphenWordIndexes.includes(j)) { // check if current index is included in hyphen index array
       var beforeHyphenWord = titleArray[j].split('-')[0];
       var afterHyphenWord = titleArray[j].split('-')[1];
       titledSentence += ' ' + beforeHyphenWord[0].toUpperCase() + beforeHyphenWord.slice(1) + '-' + afterHyphenWord[0].toUpperCase() + afterHyphenWord.slice(1);

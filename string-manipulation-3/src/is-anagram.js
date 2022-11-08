@@ -16,5 +16,5 @@ method that remove space with nothing .replce(' ', '')
 function isAnagram(firstString, secondString) {
   var sortedFirstString = firstString.replaceAll(' ', '').split('').sort().join('');
   var sortedSecondString = secondString.replaceAll(' ', '').split('').sort().join('');
-  return sortedFirstString.includes(sortedSecondString);
+  return (sortedFirstString.includes(sortedSecondString) && sortedSecondString.includes(sortedFirstString));
 }
