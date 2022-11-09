@@ -226,7 +226,6 @@ function assignCardsToPlayers(player, cards, hand) {
 }
 
 function totalPoint(player) {
-  // debugger;
   var pointsArray = [];
   for (var j = 0; j < player.length; j++) {
     var totalPoint = 0;
@@ -263,7 +262,7 @@ function highHandGame(player, hand) {
   // get cards for each player
   while (cardsInPlayIndexes.length < totalCardsInPlay) {
     var newCardIndex = randomCard();
-    if (!Array.prototype.includes.call(cardsInPlayIndexes, newCardIndex)) {
+    if (!cardsInPlayIndexes.includes(newCardIndex)) {
       cardsInPlayIndexes.push(newCardIndex);
     }
   }
@@ -273,9 +272,18 @@ function highHandGame(player, hand) {
   var winners = hasMultipleWinners(pointsArray);
   // find winner index
   if (winners.length === 1) {
-    return dealedPlayers[winners[0]].name;
+    return 'Winner is ' + dealedPlayers[winners[0]].name;
+  } else {
+    var tiedWinners = 'Joint winners are: ';
+    for (var p = 0; p < winners.length; p++) {
+      if (p === winners.length - 1) {
+        tiedWinners += dealedPlayers[winners[p]].name;
+      } else {
+        tiedWinners += dealedPlayers[winners[p]].name + ' and ';
+      }
+    }
+    return tiedWinners;
   }
-  return winners;
 }
 
-highHandGame(players);
+highHandGame(players, 2);
