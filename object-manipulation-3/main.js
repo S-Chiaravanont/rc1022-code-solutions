@@ -1,184 +1,5 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-var players = [
-  {
-    name: 'player 1',
-    hand: []
-  },
-  {
-    name: 'player 2',
-    hand: []
-  },
-  {
-    name: 'player 3',
-    hand: []
-  },
-  {
-    name: 'player 4',
-    hand: []
-  }
-];
-
-var deckOfCards = [
-  {
-    rank: 'ace',
-    suit: 'clubs'
-  }, {
-    rank: 'ace',
-    suit: 'diamonds'
-  }, {
-    rank: 'ace',
-    suit: 'hearts'
-  }, {
-    rank: 'ace',
-    suit: 'spades'
-  }, {
-    rank: '2',
-    suit: 'clubs'
-  }, {
-    rank: '2',
-    suit: 'diamonds'
-  }, {
-    rank: '2',
-    suit: 'hearts'
-  }, {
-    rank: '2',
-    suit: 'spades'
-  }, {
-    rank: '3',
-    suit: 'clubs'
-  }, {
-    rank: '3',
-    suit: 'diamonds'
-  }, {
-    rank: '3',
-    suit: 'hearts'
-  }, {
-    rank: '3',
-    suit: 'spades'
-  }, {
-    rank: '4',
-    suit: 'clubs'
-  }, {
-    rank: '4',
-    suit: 'diamonds'
-  }, {
-    rank: '4',
-    suit: 'hearts'
-  }, {
-    rank: '4',
-    suit: 'spades'
-  }, {
-    rank: '5',
-    suit: 'clubs'
-  }, {
-    rank: '5',
-    suit: 'diamonds'
-  }, {
-    rank: '5',
-    suit: 'hearts'
-  }, {
-    rank: '5',
-    suit: 'spades'
-  }, {
-    rank: '6',
-    suit: 'clubs'
-  }, {
-    rank: '6',
-    suit: 'diamonds'
-  }, {
-    rank: '6',
-    suit: 'hearts'
-  }, {
-    rank: '6',
-    suit: 'spades'
-  }, {
-    rank: '7',
-    suit: 'clubs'
-  }, {
-    rank: '7',
-    suit: 'diamonds'
-  }, {
-    rank: '7',
-    suit: 'hearts'
-  }, {
-    rank: '7',
-    suit: 'spades'
-  }, {
-    rank: '8',
-    suit: 'clubs'
-  }, {
-    rank: '8',
-    suit: 'diamonds'
-  }, {
-    rank: '8',
-    suit: 'hearts'
-  }, {
-    rank: '8',
-    suit: 'spades'
-  }, {
-    rank: '9',
-    suit: 'clubs'
-  }, {
-    rank: '9',
-    suit: 'diamonds'
-  }, {
-    rank: '9',
-    suit: 'hearts'
-  }, {
-    rank: '9',
-    suit: 'spades'
-  }, {
-    rank: '10',
-    suit: 'clubs'
-  }, {
-    rank: '10',
-    suit: 'diamonds'
-  }, {
-    rank: '10',
-    suit: 'hearts'
-  }, {
-    rank: '10',
-    suit: 'spades'
-  }, {
-    rank: 'jack',
-    suit: 'clubs'
-  }, {
-    rank: 'jack',
-    suit: 'diamonds'
-  }, {
-    rank: 'jack',
-    suit: 'hearts'
-  }, {
-    rank: 'jack',
-    suit: 'spades'
-  }, {
-    rank: 'queen',
-    suit: 'clubs'
-  }, {
-    rank: 'queen',
-    suit: 'diamonds'
-  }, {
-    rank: 'queen',
-    suit: 'hearts'
-  }, {
-    rank: 'queen',
-    suit: 'spades'
-  }, {
-    rank: 'king',
-    suit: 'clubs'
-  }, {
-    rank: 'king',
-    suit: 'diamonds'
-  }, {
-    rank: 'king',
-    suit: 'hearts'
-  }, {
-    rank: 'king',
-    suit: 'spades'
-  }
-];
-
 /*
 Requirement:
 - need to random (0-51) for cards
@@ -191,6 +12,29 @@ Requirement:
 - tiebreaker between tied players(potentially more than 2 hands)
 - return ultimate winner
 */
+
+var players = [];
+
+var deckOfCards = [];
+var cardFaces = ['clubs', 'diamonds', 'hearts', 'spades'];
+for (var i = 1; i < 14; i++) {
+  for (var j = 0; j < cardFaces.length; j++) {
+    var newCard = {};
+    if (i === 1) {
+      newCard.rank = 'ace';
+    } else if (i === 11) {
+      newCard.rank = 'jack';
+    } else if (i === 12) {
+      newCard.rank = 'queen';
+    } else if (i === 13) {
+      newCard.rank = 'king';
+    } else {
+      newCard.rank = String(i);
+    }
+    newCard.suit = cardFaces[j];
+    deckOfCards.push(newCard);
+  }
+}
 
 function rankCard(card) {
   if (Number(card.rank)) {
@@ -250,9 +94,14 @@ function hasMultipleWinners(points) {
 }
 
 function makePlayerObjCopy(player) {
-  var playerJSON = JSON.stringify(player);
-  var newPlayers = JSON.parse(playerJSON);
-  return newPlayers;
+  var players = [];
+  for (var i = 1; i < 5; i++) {
+    var newPlayer = {};
+    newPlayer.name = 'player ' + i;
+    newPlayer.hand = [];
+    players.push(newPlayer);
+  }
+  return players;
 }
 
 function highHandGame(player, hand) {
