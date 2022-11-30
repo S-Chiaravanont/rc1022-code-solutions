@@ -1,0 +1,500 @@
+  101  git push origin javascript-carousel 
+  102  git switch main
+  103  git pull origin main
+  104  git branch http-messages
+  105  git switch http-messages 
+  106  http http://www.example.com
+  107  http --verbose http://www.example.com
+  108  https https://jsonplaceholder.typicode.com/users
+  109  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+  110  http --body GET https://example.com > http-messages/index.html
+  111  git status
+  112  git add http-messages/
+  113  git commit -m "completed http-messages exercise"
+  114  git push origin http-messages 
+  115  git switch main
+  116  git pull origin main
+  117  git pull origin main
+  118  git branch javascript-ajax
+  119  git branch javascript-ajax 
+  120  git statu
+  121  git status
+  122  git switch javascript-ajax 
+  123  git status
+  124  git add javascript-ajax/
+  125  git commit -m "completed javascript-ajax exercise"
+  126  git push origin javascript-ajax 
+  127  git status
+  128  git switch main
+  129  git pull origin main
+  130  clear
+  131  http https://ia800204.us.archive.org/fulltext/inside.php?item_id=designevaluation25clin&doc=designevaluation25clin&path=/27/items/designevaluation25clin&q=%22library%20science%22
+  132  http https://ia800204.us.archive.org/fulltext/inside.php?item_id==designevaluation25clin doc==designevaluation25clin path==/27/items/designevaluation25clin q==%22library%20science%22
+  133  http https://openlibrary.org/works/OL45883W.json
+  134  http https://openlibrary.org/works/OL45883W/Fantastic_Mr._FOX
+  135  http https://openlibrary.org/isbn/9780140328721.json
+  136  https https://openlibrary.org/isbn/9780140328721.json
+  137  http https://beta3.api.climatiq.io/estimate     --headers  'Authorization: Bearer API_KEY'    --body  '{
+  138    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  139    "parameters": {
+  140      "weight": 200,
+  141      "distance": 400,
+  142      "weight_unit": "kg",
+  143      "distance_unit": "km"
+  144    }
+  145  }'
+  146  http https://beta3.api.climatiq.io/estimate     --headers  'Authorization: Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'    --body  '{
+  147    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  148    "parameters": {
+  149      "weight": 200,
+  150      "distance": 400,
+  151      "weight_unit": "kg",
+  152      "distance_unit": "km"
+  153    }
+  154  }'
+  155  http https://beta3.api.climatiq.io/estimate     --headers  Authorization: Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4    --body  {
+  156    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  157    "parameters": {
+  158      "weight": 200,
+  159      "distance": 400,
+  160      "weight_unit": "kg",
+  161      "distance_unit": "km"
+  162    }
+  163  }
+  164  http https://beta3.api.climatiq.io/estimate     --header  'Authorization: Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'    --data  '{
+  165    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  166    "parameters": {
+  167      "weight": 200,
+  168      "distance": 400,
+  169      "weight_unit": "kg",
+  170      "distance_unit": "km"
+  171    }
+  172  }'
+  173  echo '{
+  174    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  175    "parameters": {
+  176      "weight": 200,
+  177      "distance": 400,
+  178      "weight_unit": "kg",
+  179      "distance_unit": "km"
+  180    }
+  181  }' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4''
+  182  clear
+  183  echo '{
+  184    "emission_factor": "freight_vehicle-vehicle_type_truck_medium_or_heavy-fuel_source_na-vehicle_weight_na-percentage_load_na",
+  185    "parameters": {
+  186      "weight": 200,
+  187      "distance": 400,
+  188      "weight_unit": "kg",
+  189      "distance_unit": "km"
+  190    }
+  191  }' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  192  clear
+  193  echo '[{
+  194    "emission_factor": "passenger_vehicle-vehicle_type_pickup_trucks_vans_suvs-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  195    "parameters": {
+  196      "distance": 400,
+  197      "distance_unit": "mi"
+  198    }
+  199  }, {
+  200    "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  201    "parameters": {
+  202      "distance": 400,
+  203      "distance_unit": "mi"
+  204  }, {
+  205    "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na",
+  206    "parameters": {
+  207      "passengers": 1,
+  208      "distance": 400,
+  209      "distance_unit": "mi"
+  210  }, {
+  211    "emission_factor": "electrical_equipment-type_home_cooking_appliances",
+  212    "parameters": {
+  213      "energy": 1,
+  214      "energy_unit": "TJ"
+  215  }, {
+  216    "emission_factor": "electronics-type_computers",
+  217    "parameters": {
+  218      "energy": 2,
+  219      "energy_unit": "TJ"
+  220  }, {
+  221    "emission_factor": "consumer_goods-type_clothing_clothing_accessories_stores",
+  222    "parameters": {
+  223      "money": 30,
+  224      "money_unit": "usd"
+  225  }]' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  226  clear
+  227  clear
+  228  clear
+  229  clear
+  230  echo '[{
+  231    "emission_factor": "passenger_vehicle-vehicle_type_pickup_trucks_vans_suvs-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  232    "parameters": {
+  233      "distance": 400,
+  234      "distance_unit": "mi"
+  235    }
+  236  }, {
+  237    "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  238    "parameters": {
+  239      "distance": 400,
+  240      "distance_unit": "mi"
+  241  }, {
+  242    "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na",
+  243    "parameters": {
+  244      "passengers": 1,
+  245      "distance": 400,
+  246      "distance_unit": "mi"
+  247  }, {
+  248    "emission_factor": "electrical_equipment-type_home_cooking_appliances",
+  249    "parameters": {
+  250      "energy": 1,
+  251      "energy_unit": "TJ"
+  252  }, {
+  253    "emission_factor": "electronics-type_computers",
+  254    "parameters": {
+  255      "energy": 2,
+  256      "energy_unit": "TJ"
+  257  }, {
+  258    "emission_factor": "consumer_goods-type_clothing_clothing_accessories_stores",
+  259    "parameters": {
+  260      "money": 30,
+  261      "money_unit": "usd"
+  262  }
+  263  }]' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  264  clearclear
+  265  clear
+  266  echo '[{
+  267    "emission_factor": "passenger_vehicle-vehicle_type_pickup_trucks_vans_suvs-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  268    "parameters": {
+  269      "distance": 400,
+  270      "distance_unit": "mi"
+  271    }
+  272  }, {
+  273    "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+  274    "parameters": {
+  275      "distance": 400,
+  276      "distance_unit": "mi"
+  277    }
+  278  }, {
+  279    "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na",
+  280    "parameters": {
+  281      "passengers": 1,
+  282      "distance": 400,
+  283      "distance_unit": "mi"
+  284    }
+  285  }, {
+  286    "emission_factor": "electrical_equipment-type_home_cooking_appliances",
+  287    "parameters": {
+  288      "energy": 1,
+  289      "energy_unit": "TJ"
+  290    }
+  291  }, {
+  292    "emission_factor": "electronics-type_computers",
+  293    "parameters": {
+  294      "energy": 2,
+  295      "energy_unit": "TJ"
+  296    }
+  297  }, {
+  298    "emission_factor": "consumer_goods-type_clothing_clothing_accessories_stores",
+  299    "parameters": {
+  300      "money": 30,
+  301      "money_unit": "usd"
+  302    }
+  303  }]' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  304  clear
+  305  echo '[{
+  306    "emission_factor": {
+  307      "activity_id": "passenger_vehicle-vehicle_type_pickup_trucks_vans_suvs-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  308      },
+  309    "parameters": {
+  310      "distance": 400,
+  311      "distance_unit": "mi"
+  312    }
+  313  }, {
+  314    "emission_factor": {
+  315      "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  316      },
+  317    "parameters": {
+  318      "distance": 400,
+  319      "distance_unit": "mi"
+  320    }
+  321  }]' | http --form POST 'https://beta3.api.climatiq.io/estimate' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  322  echo '[
+  323      {
+  324          "emission_factor": {
+  325              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  326          },
+  327          "parameters":{
+  328              "distance": 100,
+  329              "distance_unit": "km"
+  330          }
+  331      },
+  332      {
+  333          "emission_factor": {
+  334              "activity_id": "consumer_goods-type_snack_foods"
+  335          },
+  336          "parameters": {
+  337              "money": 15,
+  338              "money_unit": "usd"
+  339          }
+  340      }
+  341  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer API_KEY'
+  342  echo '[
+  343      {
+  344          "emission_factor": {
+  345              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  346          },
+  347          "parameters":{
+  348              "distance": 100,
+  349              "distance_unit": "km"
+  350          }
+  351      },
+  352      {
+  353          "emission_factor": {
+  354              "activity_id": "consumer_goods-type_snack_foods"
+  355          },
+  356          "parameters": {
+  357              "money": 15,
+  358              "money_unit": "usd"
+  359          }
+  360      }
+  361  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  362  clear
+  363  echo '[
+  364      {
+  365          "emission_factor": {
+  366              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  367          },
+  368          "parameters":{
+  369              "distance": 100,
+  370              "distance_unit": "km"
+  371          }
+  372      },
+  373      {
+  374          "emission_factor": {
+  375              "activity_id": "consumer_goods-type_snack_foods"
+  376          },
+  377          "parameters": {
+  378              "money": 15,
+  379              "money_unit": "usd"
+  380          }
+  381      }
+  382  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  383  echo '[
+  384      {
+  385          "emission_factor": {
+  386              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  387          },
+  388          "parameters":{
+  389              "distance": 100,
+  390              "distance_unit": "km"
+  391          }
+  392      },
+  393      {
+  394          "emission_factor": {
+  395              "activity_id": "consumer_goods-type_snack_foods"
+  396          },
+  397          "parameters": {
+  398              "money": 15,
+  399              "money_unit": "usd"
+  400          }
+  401      },
+  402      {
+  403        "emission_factor": {
+  404            "activity_id": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na"
+  405          },
+  406          "parameters": {
+  407              "passengers": 1,
+  408              "distance": 400,
+  409              "distance_unit": "km"
+  410          }
+  411      },
+  412      {
+  413        "emission_factor": {
+  414           "activity_id" : "electronics-type_computers"
+  415          },
+  416          "parameters": {
+  417              "energy": 2,
+  418              "energy_unit": "TJ"
+  419          }
+  420      }
+  421  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  422  echo '[
+  423      {
+  424          "emission_factor": {
+  425              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  426          },
+  427          "parameters":{
+  428              "distance": 100,
+  429              "distance_unit": "km"
+  430          }
+  431      },
+  432      {
+  433          "emission_factor": {
+  434              "activity_id": "consumer_goods-type_snack_foods"
+  435          },
+  436          "parameters": {
+  437              "money": 15,
+  438              "money_unit": "usd"
+  439          }
+  440      },
+  441      {
+  442        "emission_factor": {
+  443            "activity_id": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na"
+  444          },
+  445          "parameters": {
+  446              "passengers": 1,
+  447              "distance": 400,
+  448              "distance_unit": "km"
+  449          }
+  450      },
+  451      {
+  452        "emission_factor": {
+  453           "activity_id" : "electronics-type_computers"
+  454          },
+  455          "parameters": {
+  456              "energy": 7,
+  457              "energy_unit": "kWh"
+  458          }
+  459      }
+  460  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  461  echo '[
+  462      {
+  463          "emission_factor": {
+  464              "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"
+  465          },
+  466          "parameters":{
+  467              "distance": 100,
+  468              "distance_unit": "km"
+  469          }
+  470      },
+  471      {
+  472          "emission_factor": {
+  473              "activity_id": "consumer_goods-type_snack_foods"
+  474          },
+  475          "parameters": {
+  476              "money": 15,
+  477              "money_unit": "usd"
+  478          }
+  479      },
+  480      {
+  481        "emission_factor": {
+  482            "activity_id": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na"
+  483          },
+  484          "parameters": {
+  485              "passengers": 1,
+  486              "distance": 400,
+  487              "distance_unit": "km"
+  488          }
+  489      },
+  490      {
+  491        "emission_factor": {
+  492          "activity_id": "consumer_goods-type_clothing_clothing_accessories_stores"
+  493          },
+  494          "parameters": {
+  495              "money": 30,
+  496              "money_unit": "usd"
+  497          }
+  498      }
+  499  ]' | http --form POST 'https://beta3.api.climatiq.io/batch' 'Authorization:Bearer 9ZK7P5YBPVMBJ1HVF3K6G99FHDH4'
+  500  clear
+  501  git switch object-manipulation-3
+  502  git status
+  503  git add object-manipulation-3/
+  504  git status
+  505  git commit -m "revise deckOfCard generator and players array"
+  506  git push origin object-manipulation-3 
+  507  git switch main
+  508  git status
+  509  git pull origin main
+  510  git branch es6-const-let
+  511  git switch es6-const-let 
+  512  git status
+  513  git add es6-const-let/
+  514  git status
+  515  git commit -m "completed es6-const-let exercise"
+  516  git push origin es6-const-let 
+  517  git switch main
+  518  git branch es6-template-literals
+  519  git switch es6-template-literals 
+  520  git status
+  521  git add es6-template-literals/
+  522  git status
+  523  git commit -m "complete es6-template-literals exercise"
+  524  git push origin es6-template-literals 
+  525  git status
+  526  git switch main
+  527  git branch es6-destructuring
+  528  git switch es6-destructuring 
+  529  git status
+  530  git add es6-destructuring/
+  531  git status
+  532  git commit -m "completed es6-destructuring exercise"
+  533  git push origin es6-destructuring 
+  534  git status
+  535  git switch main
+  536  git branch es6-arrow-functions
+  537  git switch es6-arrow-functions 
+  538  git status
+  539  git add es6-arrow-functions/
+  540  git status
+  541  git commit -m "completed es6-arrow-functions exercise"
+  542  git push origin es6-arrow-functions 
+  543  git status
+  544  git switch main
+  545  git status
+  546  git pull origin main
+  547  git branch command-line-basics
+  548  git switch command-line-basics 
+  549  cd command-line-basics
+  550  man man
+  551  man cat
+  552  cat laziness.txt
+  553  cat impatience.txt
+  554  cat hubris.txt
+  555  cat laziness.txt impatience.txt hubris.txt
+  556  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  557  cat three-virtues.txt 
+  558  man ls
+  559  ls -a
+  560  ls -F
+  561  ls lfz-staff/ -a
+  562  ls lfz-staff/ -F
+  563  ls -aF lfz-staff > lfz-staff/contents.txt
+  564  cat lfz-staff/contents.txt
+  565  man pwd
+  566  pwd
+  567  pwd > i-was-here.txt
+  568  ls
+  569  cat i-was-here.txt
+  570  man echo
+  571  echo 'Hello, World!'
+  572  echo 'Hello, World!' > hello.txt
+  573  ls
+  574  cat hello.txt
+  575  man touch
+  576  touch tag-youre-it.txt
+  577  touch snoot/boop.txt
+  578  ls snoot/
+  579  man mkdir
+  580  mkdir parent
+  581  ls parent/
+  582  mkdir -p parent/child/grandchild
+  583  touch parent/child/grandchild/.gitkeep
+  584  ls -a parent/child/grandchild/
+  585  man mv
+  586  mv pokiemans
+  587  mv pokiemans pokemon
+  588  ls
+  589  man rm
+  590  rm lol.txt
+  591  ls
+  592  rm -r kill-me/
+  593  ls
+  594  man cp
+  595  cp and-then.txt no-and-then.txt
+  596  ls
+  597  cat and-then.txt no-and-then.txt
+  598  man history
+  599  history
+  600  history > command-history.txt
