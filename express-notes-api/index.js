@@ -25,11 +25,12 @@ app.post('/api/notes', (req, res) => {
         console.log(err);
         res.status(500);
         res.send(unexpectedError);
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('New note added.');
+        res.status(201);
+        res.json(note);
       }
-      // eslint-disable-next-line no-console
-      console.log('New note added.');
-      res.status(201);
-      res.json(note);
     });
   }
 });
@@ -74,10 +75,11 @@ app.delete('/api/notes/:id', (req, res) => {
         console.log(err);
         res.status(500);
         res.send(unexpectedError);
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('A note is deleted from notes and notes have been saved');
+        res.sendStatus(204);
       }
-      // eslint-disable-next-line no-console
-      console.log('A note is deleted from notes and notes have been saved');
-      res.sendStatus(204);
     });
   }
 });
@@ -105,11 +107,12 @@ app.put('/api/notes/:id', (req, res) => {
         console.log(err);
         res.status(500);
         res.send(unexpectedError);
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('Notes have been editted and saved');
+        res.status(200);
+        res.json(note);
       }
-      // eslint-disable-next-line no-console
-      console.log('Notes have been editted and saved');
-      res.status(200);
-      res.json(note);
     });
   }
 });
