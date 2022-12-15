@@ -1,0 +1,50 @@
+.toggle-house {
+  width: 70px;
+  height: 2rem;
+  border: 3px solid black;
+  border-radius: 20px;
+  position: relative;
+  display: inherit;
+}
+
+.toggle-house:hover {
+  cursor: pointer;
+}
+
+.house-on {
+  background-color: rgb(106 168 80);
+}
+
+.house-off {
+  background-color: rgb(226 226 226);
+}
+
+.toggle-button {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.button-on {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+}
+
+.button-off {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+}
+
+.text-style {
+  line-height: 35px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0%;
+  right: -70%;
+}
