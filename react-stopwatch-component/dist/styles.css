@@ -1,0 +1,21 @@
+.watch-face {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padding {
+  padding: 10px 45px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.watch-face:hover {
+  cursor: pointer;
+}
