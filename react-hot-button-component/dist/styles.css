@@ -1,0 +1,39 @@
+button {
+  width: 100px;
+  height: 2rem;
+  border: 1px solid black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hot1 {
+  background-color: rgb(53 28 116);
+  color: white;
+}
+
+.hot2 {
+  background-color: rgb(103 78 167);
+  color: white;
+}
+
+.hot3 {
+  background-color: rgb(224 102 102);
+  color: white;
+}
+
+.hot4 {
+  background-color: rgb(246 178 107);
+  color: black;
+}
+
+.hot5 {
+  background-color: rgb(255 255 0);
+  color: black;
+}
+
+.hot6 {
+  background-color: white;
+  color: black;
+}
