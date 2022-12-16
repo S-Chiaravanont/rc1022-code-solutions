@@ -15,13 +15,13 @@ class PasswordHandle extends React.Component {
     const currentPassword = event.target.value;
     this.setState({ password: currentPassword });
     if (currentPassword.length === 0) {
-      this.setState({ mark: 'fa-solid fa-xmark' });
+      this.setState({ mark: 'fa-solid fa-xmark red' });
       this.setState({ errorMessage: 'A password is required.' });
     } else if (currentPassword.length < 8) {
-      this.setState({ mark: 'fa-solid fa-xmark' });
+      this.setState({ mark: 'fa-solid fa-xmark red' });
       this.setState({ errorMessage: 'Your password is too short.' });
     } else {
-      this.setState({ mark: 'fa-solid fa-check' });
+      this.setState({ mark: 'fa-solid fa-check green' });
       this.setState({ errorMessage: '' });
     }
   }
