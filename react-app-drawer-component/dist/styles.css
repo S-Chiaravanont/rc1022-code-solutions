@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.container-ul {
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.font-2rem {
+  font-size: 2rem;
+  color: black;
+  padding: 10px;
+}
+
+.modal-box {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+}
+
+.gray-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 44.4%);
+}
+
+div > .item-text:hover {
+  background-color: rgb(0 0 0 / 20.6%);
+  transition: background-color 0.2s ease-in;
+}
+
+.drawer-pos-hide {
+  right: -100%;
+}
+
+.drawer-bg-pos-hide {
+  display: none;
+}
