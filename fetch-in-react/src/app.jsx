@@ -16,9 +16,7 @@ class App extends React.Component {
     fetch(myRequest)
       .then(res => res.json())
       .then(data => {
-        for (const user of data) {
-          this.state.users.push(user);
-        }
+        this.setState({ users: data });
         this.setState({ isLoading: false });
       })
       .catch(err => {
