@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.box {
+  width: 400px;
+  border: 1px solid black;
+  margin: 1px;
+  padding: 5px;
+  background-color: rgb(128 128 128 / 45.2%);
+  font-size: 1.5rem;
+}
+
+.accordion-box {
+  width: 400px;
+  border: 1px solid black;
+  margin: 1px;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.dis-none {
+  display: none;
+}
+
+.box:hover {
+  cursor: pointer;
+}
