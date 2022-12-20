@@ -37,7 +37,7 @@ export default class App extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        const tasks = this.state.todos;
+        const tasks = this.state.todos.slice();
         const task = data;
         const updatedTodos = tasks.concat(task);
         this.setState({ todos: updatedTodos });
@@ -75,7 +75,7 @@ export default class App extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        const tasks = this.state.todos;
+        const tasks = this.state.todos.slice();
         const task = data;
         tasks.splice(index, 1, task);
         this.setState({ todos: tasks });
