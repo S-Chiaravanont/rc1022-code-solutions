@@ -1,0 +1,119 @@
+----- Landing page
+- HTML file loads
+- main.js script loads
+- Index.jsx execute renders <App /> onto div#root on HTML file
+- App class from app.jsx executes
+- create constructor(props) ->
+  state = {
+    user: null,
+    isAuthorizing: true,
+    route: parseRoute(window.location.hash)
+  }
+- window.location.hash = '#' -> parseRoute('#') returns '' empty string
+- render() runs -> first condition statement -> isAuthorizing === true -> returns null and exit render() method
+- componentDidMount() runs after render() is called
+- because hash route doesn't change, window event listener doesn't runs
+- token is undefined because we have not signed in and assigned any value yet
+- user is null because token is undefined
+- set new state for isAuthorizing = false;
+- because setState ran -> call for re-render()
+- isAuthorizing === false -> it doesn't exit method at guard clause
+- set up for the AppContext
+- render() calls on <Navbar />
+- Navbar import AppContext -> { user, handleSignOut}
+- Navbar class returns element from render method
+- Navbar element contains App Name, sign out button because {user === null} at this moment
+- App.render() then render <PageContainer> element and its child { this. renderPage()} method
+- renderPage method runds -> setting path === this.state.route === ''
+- path === '' -> return <Home />
+- Home executes render() -> checking if this.context.user is not truthy
+- at this point { this.context.user === null } -> return <Redirect to="sign-in" />
+- Redirect executes -> props.to === "sign-in"
+- re-render() at App.render()
+- this.state.isAuthorizing === false
+- runs <Navbar />
+- runs { this.renderPage() } again
+- this time path === "sign-in"
+- runs <Auth />
+- this.context.user === null -> path === "sign-in"
+- welcomeMessage = please sign in...
+- display sign in information
+- run <AuthForm ... />
+- set up constructor for AuthForm
+- AuthForm.render() runs -> return elements matched with path==='sign-in'
+
+----- User can sign up
+- at sign-in page
+- user clicks on register
+- changes # from #sign-in to #sign-up and re-App.render()
+- runs <Navbar />
+- runs { this.renderPage() } with path === "sign-up"
+- runs <Auth />
+- runs <AuthForm ... />
+- renders sign-up page
+- user types on username
+- handleChange(event) execute
+- match event.target to input
+- update setState({username: event.target.value})
+- user types on password
+- handleChange(event) execute
+- match event.target to input
+- update setState({password: event.target.value})
+- user clicks on register
+- handleSubmit(event) execute
+- prevent default for submit form
+- this.props.action === "sign-up"
+- create fetch request headers, methods and body content
+- send fetch request to server
+- server -> json middleware parse incoming req.body
+- '/api/auth/${action}' -> /sign-up
+- argon2 create a promist -> hashing password
+- then* create sql query
+- send query to database
+- get returns from sql
+- send status and json (userId, username, createdAt) back to frontend
+- within the promise of Fetch, action === "sign-up"
+- re-route (hash) back to sign-in page
+
+------ User can sign in
+- at sign-in page
+- user types on username/password -> handleChange() will update input
+- user clicks on sign in
+- handleSubmit() executes
+- sending Fetch (POST) action === "sign-in" (/api/auth/sign-in)
+- json middleware parse req.body for username/password
+- app.post('/api/auth/sign-in) -> create sql query
+- argon2 to verify hashedpassword with password
+- verify passed -> create payload for {userId, username}
+- create token with jwt.sign(payload, TOKEN_SECRET)
+- send back payload and newly created token to frontend
+- back to Fetch promise -> runs this.props.onSignIn(result)
+- onSignIn={handleSignIn} => method from App
+- handleSignIn(result) => result = {user, token}
+- create a new item on window.localstorage that contain result.token
+- update setState({user: result.user})
+- re-render for App.render()
+- isAuthorizing === false;
+- return runs <Navbar /> => runs {this.renderPage()}
+- path === 'sign-in'
+- runs <Auth />
+- user isn't null anymore -> runs <Redirect to="" />
+- update window.location to '#'
+- re-render App.render()
+- return runs <Navbar /> => {this.renderPage()}
+- path === '' => runs <home />
+- this.context.user isn't null => return div element and iframe link to giphy website
+
+------ User can stay sign in
+- user refresh page
+- window.location === ''
+- create constructor(props)
+- App.render()
+- this.renderPage() -> <Home /> -> Redirect to="sign-in" /> -> window.location = "sign-in" -> App.render() -> this.renderPage() -> <Auth /> -> render log in page
+- componentDidMount() executes -> token set to what's stored on window.localstorage
+- update setState({ user: token, isAuthorizing: false})
+- re-render() App.render()
+- this.renderPage() -> <Auth /> -> user isn't empty -> <Redirect to="">
+- window.location = '' => re-render() => this.renderPage()
+- path = '' => <Home />
+- return iframe with giphy
