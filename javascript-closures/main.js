@@ -1,14 +1,12 @@
-// function graduate(credential) {
-//   let fullName = null;
-//   function changeName(val) {
-//     fullName = val;
-//     return fullName;
-//   }
-//   return {
-//     fullName(name) {
-//       changeName(name);
-//     }
-//   };
-// }
+function graduate(credential) {
+  function accredit(fullName) {
+    return `${fullName}, ` + credential;
+  }
+  return accredit;
+}
 
-// medicalSchool('name') = 'name, M.D.'
+const medicalSchool = graduate('M.D.');
+const lawSchool = graduate('Esq.');
+
+console.log('medicalSchool:', medicalSchool('Michael Jackson'));
+console.log('lawSchool:', lawSchool('O.J. Simpson'));
