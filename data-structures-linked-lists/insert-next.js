@@ -2,5 +2,8 @@
 /* exported insertNext */
 
 function insertNext(list, value) {
-  list.next.data = value;
+  const second = new LinkedList(value);
+  const third = list.next;
+  list.next = second;
+  list.next.next = third;
 }

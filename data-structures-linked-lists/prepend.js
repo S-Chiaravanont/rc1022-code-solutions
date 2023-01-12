@@ -3,9 +3,7 @@
 
 function prepend(list, value) {
   var newList = new LinkedList(value);
-  const data = list.data;
-  newList.data = data;
-  // console.log('data', newList.data);
-  // console.log('value', value);
+  const next = list;
+  newList.next = next;
   return newList;
 }
